@@ -54,7 +54,7 @@ function Contact(){
 
 					</div>
 					<div className="flex-item m-4">
-					<h4>Just say Hi </h4>
+					<h4>Just say Hi 👋</h4>
 
 					<form>
 						<div className="row mb-3">
