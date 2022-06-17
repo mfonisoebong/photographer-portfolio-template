@@ -1,0 +1,558 @@
+/*	fonts are imported from fonts.google.com	*/
+/*	
+Fonts imported include: 
+Montserrat;
+Oleo Script;
+
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap');
+
+/*	Universal selector	*/
+
+*{
+	font-family: 'Montserrat', sans-serif;
+}
+
+/*	DECLARING ROOT VARIABLES		*/
+
+:root{
+	--dark: #000000;
+	--light-dark: #161a1d;
+	--dark-grey: #6c757d;
+	--white: #f8f9fa;
+	--grey: #dee2e6;
+	--gray: #ced4da;
+	--dark-gray: #adb5bd;
+	--text-normal: 14px;
+	--text-heading: 30px;
+	--text-sub-heading: 23px;
+	--text-des: 17px;
+	--text-nav: 15px;
+	--text-sm: 13px;
+	--text-xsm: 11px;
+	--red: #ba181b;
+	--light-red: #e5383b;
+	--special-font: 'Oleo Script', cursive;
+	--dur: 0.5s;
+}
+
+
+body{
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+}
+body,
+#root{
+	background-color: var(--dark);
+	min-height: 100vh;
+	height: max-content;
+}
+body::-webkit-scrollbar{
+	background: none;
+	width: 7px;
+}
+body::-webkit-scrollbar-thumb{
+	background-color: var(--light-red);
+}
+
+
+
+/*	 .overlay-container styling begins	*/
+
+.overlay-container{
+	position: fixed;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	height: 100vh;
+		backdrop-filter: blur(3px);
+	-webkit-backdrop-filter: blur(3px);
+	z-index: 99999;
+}
+.overlay-container .d-flex{
+	width: 100%;
+	height: 100%;
+	display: grid;
+	place-items: center;
+}
+.overlay-container .d-flex > img{
+	height: 80%;
+}
+.overlay-container .d-flex > button.btn{
+	position: absolute;
+	font-size: 30px;
+	color: var(--light-red);
+	top: 20px;
+	right: 20px;
+}
+.overlay-container .d-flex > button.btn::after{
+content: "Close";
+position: absolute;
+font-size: 14px;
+transform: translate(-80%,250%);
+transition: 0.3s;
+font-weight: 500;
+opacity: 0;
+}
+
+.overlay-container .d-flex > button.btn:hover::after{
+transform: translate(-80%,200%);
+opacity: 1;
+
+}
+
+/*	 .overlay-container styling ends	*/
+
+
+/*	header styling begins	*/
+header {
+
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+}
+/*	header styling ends	*/
+
+
+/*	.navbar styling begins	*/
+
+.navbar .container  a.navbar-brand{
+	font-family: var(--special-font);
+	transition: var(--dur);
+}
+.navbar .container  a.navbar-brand:hover{
+	color: var(--light-red);
+}
+.navbar .container > button.navbar-toggler{
+	color: var(--light-red);
+}
+
+.navbar .container > .collapse .navbar-nav > .nav-item > a{
+	font-size: var(--text-nav);
+	color: var(--white);
+	font-weight: 500;
+}
+
+.navbar .container > .collapse .navbar-nav > .nav-item .active,
+.navbar .container > .collapse .navbar-nav > .nav-item  a:hover{
+	color: var(--light-red);
+	transition: var(--dur);
+	font-weight: 500;
+	
+}
+
+/*	.navbar styling ends	*/
+
+
+/*	.wrapper-section styling begins	*/
+
+/* This class is being added to the global containers of some components	*/
+section.wrapper-section{
+	min-height: 77vh;
+	height: max-content;
+}
+/*	.wrapper-section styling ends	*/
+
+
+/*	.homepage-section styling begins	*/
+
+section.homepage-section .container{
+	height: 100%;
+}
+section.homepage-section .d-flex{
+	height: 100%;
+}
+section.homepage-section .d-flex .hero-text,
+section.homepage-section .d-flex .hero-image{
+	flex: 50%;
+}
+
+section.homepage-section .d-flex .hero-text > h1.heading{
+	color: var(--light-red);
+	font-size: var(--text-heading);
+}
+section.homepage-section .d-flex .hero-text > .text-container{
+	color: var(--white);
+	font-size: var(--text-nav);
+}
+section.homepage-section .d-flex .hero-text > .text-container .author{
+	font-family: var(--special-font);
+	font-size: 16.3px;
+	color: var(--light-red);
+}
+section.homepage-section .d-flex .hero-text .link-container{
+	width: 100%;
+	height: max-content;
+}
+
+section.homepage-section .d-flex .hero-text .link-container a{
+	background-color: var(--light-red);
+	height: max-content;
+	border-radius: 50px;
+	color: var(--white);
+}
+
+section.homepage-section .d-flex .hero-text .link-container a >span{
+	position: static;
+	display: none;
+	font-size: var(--text-normal);
+	font-weight: 500;
+}
+section.homepage-section .d-flex .hero-text .link-container a:hover >span{
+	display: inline;
+}
+
+section.homepage-section .d-flex .hero-text > .text-container i{
+	color: var(--light-red);
+	font-size: 20px;
+}
+section.homepage-section .d-flex .hero-image img{
+	width: 60%;
+	height: 100%;
+}
+
+/*	.homepage-section styling ends	*/
+
+/*	.skills-section styling begins	*/
+
+section.skills-section .container{
+	height: 100%;
+}
+
+section.skills-section .hero-text > h1.heading {
+	color: var(--light-red);
+	font-size: var(--text-heading);
+}
+
+section.skills-section .hero-text > p{
+		color: var(--white);
+	font-size: var(--text-nav);
+}
+
+section.skills-section .row  h3.title{
+	font-family: var(--special-font);
+	font-size: var(--text-sub-heading);
+	color: var(--light-red);
+}
+
+section.skills-section .row > .column-item{
+	position: relative;
+	margin-bottom: 100px;
+}
+section.skills-section .row > .column-item .borderTopRight{
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	border-top: 2px solid var(--light-red);
+	border-right: 2px solid var(--light-red);
+	border-bottom: 2px solid none;
+	border-left: 2px solid none;
+	margin: -4% 0 0 52%;
+	transition: all var(--dur);
+}
+
+section.skills-section .row > .column-item .borderBottomLeft{
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	border-bottom: 2px solid var(--light-red);
+	border-left: 2px solid var(--light-red);
+	border-top: 2px solid none;
+	border-right: 2px solid none;
+	margin: 78% 0 0 -52%;
+	transition: all var(--dur);
+}
+
+section.skills-section .row > .column-item .borderBottomRight{
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	border-bottom: 2px solid var(--light-red);
+	border-right: 2px solid var(--light-red);
+	border-top: 2px solid none;
+	border-left: 2px solid none;
+	margin: 78% 0 0 52%;
+	transition: all var(--dur);
+}
+
+
+section.skills-section .row > .column-item .borderTopLeft{
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	border-top: 2px solid var(--light-red);
+	border-left: 2px solid var(--light-red);
+	border-bottom: 2px solid none;
+	border-right: 2px solid none;
+	margin: -4% 0 0 -52%;
+	transition: all var(--dur);
+}
+section.skills-section .row > .column-item > img{
+	width: 56%;
+	filter: opacity(0.5);
+	transition: all var(--dur);
+	cursor: pointer;
+}
+section.skills-section .row > .column-item button{
+	position: absolute;
+	margin: 35% 0 35% 0;
+	border-radius: 0px;
+	color: var(--light-red);
+	background-color: var(--white);
+	font-size: var(--text-normal);
+	font-weight: 600;
+	transition: all var(--dur);
+	transform: translateY(100px);
+	opacity: 0;
+}
+section.skills-section .row > .column-item:hover .borderTopLeft,
+section.skills-section .row > .column-item:hover .borderTopRight,
+section.skills-section .row > .column-item:hover .borderBottomLeft,
+section.skills-section .row > .column-item:hover .borderBottomRight{
+	transform: scale(1.4);
+}
+section.skills-section .row > .column-item:hover img{
+	filter: opacity(1);
+	transform: scale(1.03);
+} 
+
+section.skills-section .row > .column-item:hover button{
+	transform: translateY(0);
+	opacity: 1;
+} 
+
+/*	.skills-section styling ends	*/
+
+
+/*	.resume-section styling begins	*/
+
+section.resume-section .container{
+	height: 100%;
+}
+section.resume-section .hero-text > h1.heading {
+	color: var(--light-red);
+	font-size: var(--text-heading);
+}
+
+section.resume-section .d-flex{
+	height: 100%;
+}
+section.resume-section .d-flex .hero-text,
+section.resume-section .d-flex .hero-image{
+	flex: 50%;
+}
+
+section.resume-section .d-flex .hero-image img{
+	width: 60%;
+	height: 100%;
+}
+
+section.resume-section .hero-text > .text-container{
+	color: var(--white);
+	font-size: var(--text-nav);
+}
+
+section.resume-section .hero-text > .text-container a.btn{
+	background-color: var(--light-red);
+	font-weight: 500;
+	color: var(--white);
+	border-radius: 50px;
+	transition: var(--dur);
+}
+section.resume-section .hero-text > .text-container a.btn:hover {
+	background-color: var(--white);
+	color: var(--light-red);
+}
+
+/*	.resume-section styling ends	*/
+
+
+/*	.services-section styling begins	*/
+
+
+section.services-section .container{
+	height: 100%;
+}
+
+section.services-section .hero-text h1.heading{
+	color: var(--light-red);
+	font-size: var(--text-heading);	
+}
+section.services-section .row > .column-item{
+	position: relative;
+	overflow: hidden;
+}
+
+section.services-section .row > .column-item > img{
+	width: 85%;
+	transition: all var(--dur);
+	cursor: pointer;
+}
+section.services-section .row > .column-item .overlay-one{
+	position: absolute;
+	width: 60%;
+	height: 80%;
+	margin-top: 40px;
+	background-color: none;
+	backdrop-filter: contrast(60%);
+	-webkit-backdrop-filter: contrast(60%);
+	top: 0;
+	display: grid;
+	place-items: center;
+	cursor: pointer;
+
+}
+
+section.services-section .row > .column-item .overlay-one > h1{
+	color: var(--white);
+	font-weight: 500;
+	font-size: var(--text-sub-heading);	
+}
+
+section.services-section .row > .column-item .overlay-two{
+	position: absolute;
+	width: 60%;
+	height: 80%;
+	margin-top: 40px;
+	background-color: var(--white);
+	top: 0;
+	display: grid;
+	place-items: center;
+	cursor: pointer;
+	z-index: 99999;
+	transform: translateY(150%);
+	transition: var(--dur);
+}
+section.services-section .row > .column-item .overlay-two p{
+	font-size: var(--text-sm);
+	color: var(--light-red);
+	font-weight: 600;
+}
+
+section.services-section .row > .column-item:hover .overlay-two{
+	transform: none;
+}
+
+/*	.services-section styling ends	*/
+
+
+/*	.contact-section styling begins	*/
+
+section.contact-section .hero-text > h1.heading {
+	color: var(--light-red);
+	font-size: var(--text-heading);
+}
+section.contact-section .flex-item{
+	flex: 50%;
+}
+section.contact-section .flex-item > h4{
+	color: var(--light-red);
+	font-size: var(--text-sub-heading);
+}
+
+section.contact-section .flex-item > p{
+	font-size: var(--text-normal);
+	color: var(--white);
+}
+
+section.contact-section .flex-item .sub-flex-item > button{
+	background-color: var(--light-dark);
+	color: var(--light-red);
+	font-size: var(--text-sub-heading);
+}
+section.contact-section .flex-item .sub-flex-item h6,
+section.contact-section .flex-item .sub-flex-item h5,
+section.contact-section .flex-item .sub-container h6{
+	color: var(--white);
+}
+section.contact-section .flex-item .sub-flex-item h6{
+	font-size: var(--text-nav);
+}
+section.contact-section .flex-item .sub-flex-item h5{
+	font-size: var(--text-des);
+}
+section.contact-section .flex-item .sub-container{
+	background-color: var(--light-dark);
+	border-radius: 10px;
+}
+section.contact-section .flex-item .sub-container a{
+	color: var(--light-red);
+	font-size: var(--text-nav);
+}
+section.contact-section .flex-item form .form-control{
+	background: none;
+	border:  1px solid var(--light-dark);
+	font-size: var(--text-normal);
+	color: var(--white);
+	caret-color: var(--light-red);
+}
+
+section.contact-section .flex-item form button[type="submit"]{
+	background-color: var(--light-red);
+	font-size: var(--text-normal);
+	color: var(--white);
+}
+
+/*	.contact-section styling ends	*/
+
+
+/*	footer styling begins	*/
+footer .container > p{
+	color: var(--light-red);
+	font-size: var(--text-nav);
+	font-weight: 500;
+}
+footer .container > p .author{
+		font-family: var(--special-font);
+}
+
+/*	footer styling ends	*/
+
+
+/*	media query for medium-sized devices	*/
+@media (max-width: 991px){
+
+
+.navbar .container > .collapse .navbar-nav > .nav-item > .nav-link{
+	text-align: center;
+}
+}
+
+/*	media query for small-sized devices	*/
+
+@media (max-width: 576px){
+
+:root{
+
+	--text-normal: 14px;
+	--text-heading: 25px;
+	--text-nav: 13px;
+	--text-sm: 13px;
+	--text-xsm: 11px;
+	--text-des: 14.5px;
+}
+.overlay-container .d-flex > button.btn{
+	top: 8px;
+	right: 15px;
+}
+
+
+	section.homepage-section .d-flex .hero-text > h1.heading,
+	section.skills-section .hero-text > h1.heading,
+	section.skills-section .hero-text > p,
+	section.resume-section .hero-text > h1.heading,
+	section.resume-section .hero-text > .text-container,
+	section.services-section .hero-text h1.heading,
+	section.contact-section .hero-text > h1.heading{
+	text-align: center;
+}
+
+footer{
+	margin-top: 150px;
+}
+
+}
