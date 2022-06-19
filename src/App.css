@@ -13,6 +13,7 @@ Oleo Script;
 
 *{
 	font-family: 'Montserrat', sans-serif;
+	box-sizing: border-box;
 }
 
 /*	DECLARING ROOT VARIABLES		*/
