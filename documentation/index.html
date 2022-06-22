@@ -81,6 +81,14 @@
 			<div class="alert alert-info p-2">
 				<p class="fw-bold"><i class="fas fa-circle-exclamation me-2"></i>All components and routes are located in .src/components and .src/routes folder</p>
 			</div>
+			<p>
+				When you open up the folder in your text editor or any IDE of your choice. The folders as well as the components and routes are all enclosed in their respective folders as shown below
+			</p>
+
+			<div class="image-container">
+				<img src="assets/images/components&routes.png" alt="image">
+			</div>
+
 			</div>
 
 			<div class="mt-5" data-tag="image">
@@ -88,13 +96,17 @@
 			<hr class="border-0">
 
 			<p class="description">
-				All images used for the original template product may be replaced or left as it is. This solely depends on the choice of the party (or parties) in ownership of this product.
+				All images used for the original template product may be replaced or left as it is. <br>	This solely depends on the choice of the party (or parties) in ownership of this product.
 			</p>
 			<p class="description">
-				All images are located in the ./src/images folder
+				All images are located in the "./src/images" folder
 			</p>
 
-			<div class="alert alert-info p-2">
+			<div class="image-container">
+				<img src="assets/images/resize.png" alt="image">
+			</div>
+
+			<div class="alert alert-info p-2 mt-2">
 				<p class="fw-bold"><i class="fas fa-circle-exclamation me-2"></i>It is recommended that Images used for this template should be of 600 by 430 dimension</p>
 			</div>			
 				
@@ -103,18 +115,37 @@
 
 			<div class="mt-5" data-tag="contact_form">
 			<h3 class="fw-normal fs-5">Contact form</h3>
+
+
 			<hr class="border-0">
+			<p class="description">
+				Check "./php_script/mail.php" for mail configuration
+			</p>
+			<div class="image-container">
+				<img src="assets/images/mail.png" alt="image">
+			</div>
 			
+			<div class="code p-2 rounded mt-3">
+				<code>
+					//On line 7 you can edit the variable " $to " to your email address <br>
+					Example: <br>
+
+					$to= 'fakeemail@gmail.com';
+
+				</code>
+			</div>
 			</div>
 
 			<div class="mt-5" data-tag="installation">
 			<h3 class="fw-normal fs-5">Installation</h3>
 			<hr class="border-0">
 			<div class="alert alert-info p-2">
-				<p class="fw-bold"><i class="fas fa-circle-exclamation me-2"></i>To run the web application Node.js must be installed on your machine</p>
+				<p class="fw-bold"><i class="fas fa-circle-exclamation me-2"></i>To run the web application Node.js must be installed on your machine. 
+					<p>To install NodeJs, go to <a href="https://nodejs.org/en/download/">https://nodejs.org/en/download/</a> to download and install NodeJs on your machine</p>
+				</p>
 			</div>
 			<p class="fw-bold">
-				Follow the steps below to install the application
+				Follow the steps below to install the application from the terminal
 			</p>
 			<ul class="list-group">
 				<li class="list-group-item border-0 bg-none p-0 mb-2"><i class="fas fa-caret-right me-2"></i>npx create-react-app "destination_folder" or yarn create react-app "destination_folder" (If yarn is installed)</li>

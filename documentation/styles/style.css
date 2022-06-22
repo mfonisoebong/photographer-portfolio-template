@@ -23,6 +23,11 @@ hr{
 	border: 1px solid none;
 	background-color: var(--bg-gray) !important;
 }
+.code {
+	background-color: #e0dfdf;
+	width: 100%;
+	height: max-content;
+}
 
 div.wrapper{
 	width: 100%;
@@ -33,6 +38,7 @@ div.wrapper{
 div.wrapper aside{
 	height: 100vh;
 	width: 25%;
+	display: block !important;
 	background-color: var(--white);
 }
 
@@ -62,19 +68,28 @@ div.wrapper .main .alert{
 }
 div.wrapper .main p.description{
 	font-size: 15px;
+	max-width: 100%;
+	min-width: max-content;
 }
 div.wrapper .main .list-group >li.list-group-item{
 	font-size: 13.5px;
 	font-weight: 500;
 }
 
-
 @media screen and (max-width: 991px){
 	div.wrapper aside{
 	width: max-content;
+	display: none;
 }	
+div.wrapper .main{
+	width: 100%;
+	overflow: scroll;
+}
 div.wrapper aside > div.list-group{
 	width: max-content;
+}
+div.wrapper .main p.description{
+	font-size: 14px;
 }
 }
 

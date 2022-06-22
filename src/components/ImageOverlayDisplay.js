@@ -1,14 +1,13 @@
 //ImageOverlayDisplay component
 
-function ImageOverlayDisplay({image, show, closeViewCard}){
+function ImageOverlayDisplay({image, closeViewCard}){
 
 
-const display= {display: show ? '' : 'none'}
 
 
 	return(
 
-		<div className="overlay-container" style={display}>
+		<div className="overlay-container">
 		<div className="d-flex justify-content-center">
 		<button className="btn btn-lg shadow-none"
 			onClick={closeViewCard}

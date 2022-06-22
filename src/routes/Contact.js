@@ -1,6 +1,30 @@
 import {motion} from 'framer-motion'
 
+import {useState, useRef} from 'react';
+import $ from 'jquery';
+
 function Contact(){
+
+	const [formMessage, setFormMessage]= useState({});
+	const fullname= useRef();
+	const email= useRef();
+	const subject= useRef();
+	const message= useRef();
+
+	async function submitForm(){
+		const data= {fullname: fullname.current.value, email: email.current.value, subject: subject.current.value, message: message.current.value};
+
+		$.post('https://mailer-php-mfoniso.herokuapp.com/mail.php', data).done(function(data){
+			console.log(data)
+		})
+		.catch(function(data){
+			console.log(data.responseText)
+		})
+			
+
+		
+	}
+
 	return(
 		<motion.div
 			initial={{scale:0.5, x:"-100%"}}
@@ -56,37 +80,27 @@ function Contact(){
 					<div className="flex-item m-4">
 					<h4>Just say Hi 👋</h4>
 
-					<form>
+					<form onSubmit={(e)=>{e.preventDefault()} }>
 						<div className="row mb-3">
 						<div className="col-6">
-							<input type="text" className="form-control shadow-none" placeholder="Full Name" />
+							<input type="text" ref={fullname} className="form-control shadow-none" placeholder="Full Name" required/>
 							
 						</div>
 						<div className="col-6">
-							<input type="text" className="form-control shadow-none" placeholder="Email address" />
+							<input type="text" ref={email} className="form-control shadow-none" placeholder="Email address" required/>
 							
 						</div>
 						</div>
 
 						<div className="mb-3">
-							<input type="text" className="form-control shadow-none" placeholder="Subject" />
+							<input type="text" ref={subject} className="form-control shadow-none" placeholder="Subject"/>
 							
 						</div>
-						<div className="row mb-3">
-						<div className="col-6">
-							<input type="text" className="form-control shadow-none" placeholder="Full Name" />
-							
-						</div>
+					
 
-						<div className="col-6">
-							<input type="text" className="form-control shadow-none" placeholder="Email address" />
-							
-						</div>
-						</div>
+						<textarea id="" ref={message} cols="30" rows="10" className="form-control shadow-none" placeholder="Message" required></textarea>
 
-						<textarea id="" cols="30" rows="10" className="form-control shadow-none" placeholder="Message"></textarea>
-
-						<button className="btn mt-3" type="submit"><strong>SEND MESSAGE</strong> <i className="fas fa-paper-plane"></i> </button>
+						<button className="btn mt-3 shadow-none" type="submit" onClick={submitForm}><strong>SEND MESSAGE</strong> <i className="fas fa-paper-plane"></i> </button>
 					</form>
 					</div>
 				</div>

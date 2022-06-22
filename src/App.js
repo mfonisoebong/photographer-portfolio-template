@@ -54,7 +54,7 @@ const closeViewCard= ()=>{
   return (
 
     <HashRouter>
-    <ImageOverlayDisplay image={overlayInfo.image} show={overlayInfo.show} closeViewCard={closeViewCard}/>
+    {overlayInfo.show &&<ImageOverlayDisplay image={overlayInfo.image} closeViewCard={closeViewCard}/>}
 
 
     <Navbar/>
