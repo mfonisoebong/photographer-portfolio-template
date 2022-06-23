@@ -21,9 +21,9 @@ $('document').ready(function(){
     
         window.location.hash=elem;
         
-        $('html,.main').animate({
+        $('.main').animate({
             scrollTop: $(`[data-tag=${elem}]`).offset().top
-        }, '1000')
+        }, '2000')
         
     }
 
