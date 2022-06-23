@@ -1,26 +1,48 @@
 import {motion} from 'framer-motion'
 
 import {useState, useRef} from 'react';
-import $ from 'jquery';
+
+import ErrorText from '../components/ErrorText';
+
+import axios from 'axios';
+
+
 
 function Contact(){
 
-	const [formMessage, setFormMessage]= useState({});
+	const [formMessage, setFormMessage]= useState({type: null, data: null});
 	const fullname= useRef();
 	const email= useRef();
 	const subject= useRef();
 	const message= useRef();
 
 	async function submitForm(){
-		const data= {fullname: fullname.current.value, email: email.current.value, subject: subject.current.value, message: message.current.value};
+		const formattedMessage= message.current.value.trim().replace("\n", "<br>");
 
-		$.post('https://mailer-php-mfoniso.herokuapp.com/mail.php', data).done(function(data){
-			console.log(data)
-		})
-		.catch(function(data){
-			console.log(data.responseText)
-		})
+		const Themessage= `<h3>${subject.current.value.trim()}</h3><br><p>${formattedMessage}</p><br>${fullname.current.value.trim()}<br>${email.current.value.trim()}`
+
+		const reciever= '';
 			
+		try{
+		const res= await axios.post(`http://127.0.0.1:3000/mfonisoservicesmailer/mail?reciever=${reciever}&msg=${Themessage}`)
+			setFormMessage({type: 'success', data: res.data.msg})
+		}
+
+		catch(err){
+			console.log(err)
+			if(err.request.status===400){
+				setFormMessage({type: 'failed', data: err.response.data.msg})
+			}
+			else{
+				setFormMessage({type: 'failed', data: err.response.data.msg})
+
+			}
+
+		}
+		
+	
+			
+		
 
 		
 	}
@@ -79,6 +101,7 @@ function Contact(){
 					</div>
 					<div className="flex-item m-4">
 					<h4>Just say Hi 👋</h4>
+					{formMessage.data!==null && <ErrorText type={formMessage.type} text={formMessage.data} setFormMessage={setFormMessage}/>}
 
 					<form onSubmit={(e)=>{e.preventDefault()} }>
 						<div className="row mb-3">
@@ -87,20 +110,28 @@ function Contact(){
 							
 						</div>
 						<div className="col-6">
-							<input type="text" ref={email} className="form-control shadow-none" placeholder="Email address" required/>
+							<input type="email" ref={email} className="form-control shadow-none" placeholder="Email address" required/>
 							
 						</div>
 						</div>
 
 						<div className="mb-3">
-							<input type="text" ref={subject} className="form-control shadow-none" placeholder="Subject"/>
+							<input type="text" ref={subject} className="form-control shadow-none" placeholder="Subject" required/>
 							
 						</div>
 					
 
-						<textarea id="" ref={message} cols="30" rows="10" className="form-control shadow-none" placeholder="Message" required></textarea>
+						<textarea id="" ref={message} cols="30" rows="10" className="form-control shadow-none input-danger" placeholder="Message" required></textarea>
 
-						<button className="btn mt-3 shadow-none" type="submit" onClick={submitForm}><strong>SEND MESSAGE</strong> <i className="fas fa-paper-plane"></i> </button>
+						<button className="btn mt-3 shadow-none" type="submit" onClick={()=>{
+							if(message.current.value.trim()==='' || fullname.current.value.trim()==='' || email.current.value.trim()==='' || subject.current.value.trim()==='' || message.current.value.trim()===''){
+								setFormMessage({type: 'failed', data: 'All fields are required'})
+							}
+							else{
+								submitForm()
+
+							}
+							}}><strong>SEND MESSAGE</strong> <i className="fas fa-paper-plane"></i> </button>
 					</form>
 					</div>
 				</div>

@@ -19,10 +19,10 @@ body{
 	overflow-y: none;
 	scroll-behavior: smooth;
 }
-hr{
+/* hr{
 	border: 1px solid none;
 	background-color: var(--bg-gray) !important;
-}
+} */
 .code {
 	background-color: #e0dfdf;
 	width: 100%;

@@ -484,6 +484,7 @@ section.contact-section .flex-item .sub-container a{
 	color: var(--light-red);
 	font-size: var(--text-nav);
 }
+
 section.contact-section .flex-item form .form-control{
 	background: none;
 	border:  1px solid var(--light-dark);
@@ -491,6 +492,7 @@ section.contact-section .flex-item form .form-control{
 	color: var(--white);
 	caret-color: var(--light-red);
 }
+
 
 section.contact-section .flex-item form button[type="submit"]{
 	background-color: var(--light-red);

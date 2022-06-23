@@ -11,7 +11,11 @@ The author of this product strongly recommends the usage of 600 by 430 dimension
 if the images that is shipped with the original template is not to be used
 
 */
-
+/*
+Visit to https://portfoliotemplatedocumentation.netlify.app/ or move to the documentations folder 
+and launch the index.html file in your browser for the guide on how to customize this web 
+application
+*/
 import {useState} from 'react';
 
 import ImageOverlayDisplay from './components/ImageOverlayDisplay';
